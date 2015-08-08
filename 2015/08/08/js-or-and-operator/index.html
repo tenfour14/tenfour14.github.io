@@ -3,18 +3,25 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tenfour&#39;s Blogs</title>
+  <title>JS巧妙运用||和&amp;&amp;运算符优化条件选择代码 | Tenfour&#39;s Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="tenfour,blog,web,前端,js,javascript,css,css3,html,html5">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tenfour's Blogs">
-<meta property="og:url" content="http://www.tenfour.cn/index.html">
+  <meta name="keywords" content="javascripts,js,逻辑运算符,代码优化,条件选择">
+  <meta name="description" content="&amp;amp;&amp;amp; 和 || 和其他编程语言一样，在js中同样是一个双目逻辑运算符，执行逻辑运算与和或。往往计算机在执行这两个逻辑运算的时候会有一个”惰性”的思维:
+
+在执行 exp1 &amp;amp;&amp;amp; exp2 &amp;amp;&amp;amp; ... &amp;amp;&amp;amp; expn的时候,会从左到右依次判断表达式1,表达式2,…,表达式n,直到遇到第一个为false的时候,其表达式整体运算结果必定为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS巧妙运用||和&&运算符优化条件选择代码">
+<meta property="og:url" content="http://www.tenfour.cn/2015/08/08/js-or-and-operator/index.html">
 <meta property="og:site_name" content="Tenfour's Blogs">
-<meta property="og:description">
+<meta property="og:description" content="&amp;amp;&amp;amp; 和 || 和其他编程语言一样，在js中同样是一个双目逻辑运算符，执行逻辑运算与和或。往往计算机在执行这两个逻辑运算的时候会有一个”惰性”的思维:
+
+在执行 exp1 &amp;amp;&amp;amp; exp2 &amp;amp;&amp;amp; ... &amp;amp;&amp;amp; expn的时候,会从左到右依次判断表达式1,表达式2,…,表达式n,直到遇到第一个为false的时候,其表达式整体运算结果必定为">
+<meta property="og:updated_time" content="2015-08-08T03:36:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tenfour's Blogs">
-<meta name="twitter:description">
+<meta name="twitter:title" content="JS巧妙运用||和&&运算符优化条件选择代码">
+<meta name="twitter:description" content="&amp;amp;&amp;amp; 和 || 和其他编程语言一样，在js中同样是一个双目逻辑运算符，执行逻辑运算与和或。往往计算机在执行这两个逻辑运算的时候会有一个”惰性”的思维:
+
+在执行 exp1 &amp;amp;&amp;amp; exp2 &amp;amp;&amp;amp; ... &amp;amp;&amp;amp; expn的时候,会从左到右依次判断表达式1,表达式2,…,表达式n,直到遇到第一个为false的时候,其表达式整体运算结果必定为">
   
     <link rel="alternative" href="/atom.xml" title="Tenfour&#39;s Blogs" type="application/atom+xml">
   
@@ -47,112 +54,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-css-ie-rgba" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/08/08/css-ie-rgba/" class="article-date">
-  <time datetime="2015-08-08T04:06:17.000Z" itemprop="datePublished">2015-08-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/css/">css</a>►<a class="article-category-link" href="/categories/css/兼容性/">兼容性</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/08/css-ie-rgba/">IE rgba兼容问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><code>CSS</code>透明度设置有<code>opacity</code>,<code>IE</code>有滤镜<code>filter:alpha()</code>,那<code>rgba</code>也是设置透明度的,有什么用呢?</p>
-<p><code>opacity</code>,<code>IE</code>的<code>filter:alpha()</code>透明度设置会让子元素继承其透明度,但是在实际项目中中,往往更多的是不想要其透明度被继承.当然,这个可以通过用定位而不直接写在透明元素里面解决透明度继承问题,但是定位始终不是一个好的布局方式.</p>
-<p><strong>非<code>IE</code>浏览器</strong>可以设计背景色用<code>rgba(R,G,B,A)</code>,其中R,G,B分别是0-255数字或者用百分比表示，A是0-1的数字，0表示全透明，1表示正常显示.但是人神共愤的<code>IE</code>并不支持这玩意.不过<code>IE</code>也有它可爱的一面——滤镜.</p>
-        
-          <p class="article-more-link">
-            <a href="/2015/08/08/css-ie-rgba/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.tenfour.cn/2015/08/08/css-ie-rgba/" data-id="cid2jhdho000k91zeaidy7lav" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ie/">ie</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rgba/">rgba</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容性/">兼容性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/透明度/">透明度</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-js-event-delegate" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/08/08/js-event-delegate/" class="article-date">
-  <time datetime="2015-08-08T03:28:36.000Z" itemprop="datePublished">2015-08-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/代码优化/">代码优化</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/08/js-event-delegate/">js事件委托</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是事件委托">什么是事件委托</h2><p>事件就是指<code>js</code>中的<code>onclick</code>,<code>onmouseout</code>,<code>onmousemove</code>,等事件,委托就是自己的事件,让别人去做.也就是说利用<code>js</code>的事件冒泡的原理,父级委托自己的子元素来完成事件,那有什么好处呢?</p>
-<ol>
-<li>避免循环,提高性能;</li>
-<li>可以让后来通过<code>js</code>生成同类元素也能具有事先添加的事件功能.</li>
-</ol>
-<p>体我们可以来看下面的例子:<br>
-        
-          <p class="article-more-link">
-            <a href="/2015/08/08/js-event-delegate/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.tenfour.cn/2015/08/08/js-event-delegate/" data-id="cid2jhdhj000d91zev4nbnmga" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/事件委托/">事件委托</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码优化/">代码优化</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-js-or-and-operator" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-js-or-and-operator" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/08/08/js-or-and-operator/" class="article-date">
   <time datetime="2015-08-08T02:48:09.000Z" itemprop="datePublished">2015-08-08</time>
@@ -169,8 +71,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/08/js-or-and-operator/">JS巧妙运用||和&amp;&amp;运算符优化条件选择代码</a>
+    <h1 class="article-title" itemprop="name">
+      JS巧妙运用||和&amp;&amp;运算符优化条件选择代码
     </h1>
   
 
@@ -183,12 +85,11 @@
 <li>在执行 <code>exp1 &amp;&amp; exp2 &amp;&amp; ... &amp;&amp; expn</code>的时候,会从左到右依次判断表达式1,表达式2,…,表达式n,直到遇到第一个为<code>false</code>的时候,其表达式整体运算结果必定为<code>false</code>,那么后面的所有表达式都不会执行了;</li>
 <li>在执行 <code>exp1 || exp2 || ... || expn</code>会从左到右以此判断表达式1,表达式2,…,表达式n,直到遇到第一个为<code>true</code>的时候,其表达式整体运算结果必定为<code>true</code>,那么后面的所有表达式都不会执行了.</li>
 </ol>
-<p>那么,我们就可以利用这两点来简化代码中的<code>if...else</code>条件选择或者<code>?:</code>三目运算.来看下面的例子:<br>
-        
-          <p class="article-more-link">
-            <a href="/2015/08/08/js-or-and-operator/#more">Read More</a>
-          </p>
-        
+<p>那么,我们就可以利用这两点来简化代码中的<code>if...else</code>条件选择或者<code>?:</code>三目运算.来看下面的例子:<br><a id="more"></a></p>
+<p>经常会遇到当条件成立时候执行某个函数或者当条件不成立的时候执行某个函数,以前我们会写成这样:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果表表达式exp结果为true执行函数fun</span></span><br><span class="line"><span class="keyword">if</span>( exp ) &#123;</span><br><span class="line">  fun();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果表达式exp结果为false执行函数fun</span></span><br><span class="line"><span class="keyword">if</span>( !exp ) &#123;</span><br><span class="line">  fun();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么现在我们可以写成:<br><figure class="highlight ocaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/** 如果表达式exp结果为<span class="literal">true</span>执行函数<span class="keyword">fun</span></span><br><span class="line">* 根据上面第一条,如果exp表达式结果为<span class="literal">false</span>,那么结果必定为<span class="literal">false</span>,所以就不会执行<span class="keyword">fun</span></span><br><span class="line">* 反之,exp为<span class="literal">true</span>的时候,不能判断整体结果为<span class="literal">true</span>还是<span class="literal">false</span>,所以计算机会继续执行<span class="keyword">fun</span></span><br><span class="line">*/</span><br><span class="line">exp &amp;&amp; <span class="keyword">fun</span><span class="literal">()</span>;</span><br><span class="line"></span><br><span class="line">/** 如果表达式exp结果为<span class="literal">false</span>执行函数<span class="keyword">fun</span></span><br><span class="line">* 根据上面第二条,如果exp表达式结果为<span class="literal">true</span>,那么结果必定为<span class="literal">true</span>,所以就不会执行<span class="keyword">fun</span></span><br><span class="line">* 反之,exp为<span class="literal">false</span>的时候,不能判断整体结果为ture还是<span class="literal">false</span>,所以计算机会继续执行<span class="keyword">fun</span></span><br><span class="line">*/</span><br><span class="line">exp || <span class="keyword">fun</span><span class="literal">()</span>;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     <footer class="article-footer">
@@ -200,12 +101,37 @@
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+    <a href="/2015/08/08/js-event-delegate/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          js事件委托
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
 </article>
 
 
 
-  
-  
+
+<section id="comments">
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+  <script type="text/javascript">
+      window.changyan.api.config({
+          appid: 'cyrUKQk62',
+          conf: 'prod_4900ba09f2f5827fa6ef8fee3e0f0faf'
+      });
+  </script>
+</section>
 </section>
         
           <aside id="sidebar">
