@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JS位运算的巧妙运用 | Tenfour&#39;s Blogs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="keywords" content="js,javascript,代码优化,位运算">
+  <meta name="description" content="位运算,对于底层的C,C++开发人员来说并不陌生,但是对于js这门弱语言来说,位运算总感觉是那么高深.那么我们为什么还要用位运算呢?
+首先,编程语言都是通过机器语言,汇编语言,C,C++,Java等这样一层一层封装出来的,每次封装对于开发人员来说代码的阅读性更好了,但是计算机在”阅读”这些代码的时候还是会一级一级的转换回去才能执行这些指令,所以我们越容易读懂的代码,计算机的执行效率就越低.尽管科技">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS位运算的巧妙运用">
+<meta property="og:url" content="http://www.tenfour.cn/2015/08/10/js-bit-operation/index.html">
+<meta property="og:site_name" content="Tenfour's Blogs">
+<meta property="og:description" content="位运算,对于底层的C,C++开发人员来说并不陌生,但是对于js这门弱语言来说,位运算总感觉是那么高深.那么我们为什么还要用位运算呢?
+首先,编程语言都是通过机器语言,汇编语言,C,C++,Java等这样一层一层封装出来的,每次封装对于开发人员来说代码的阅读性更好了,但是计算机在”阅读”这些代码的时候还是会一级一级的转换回去才能执行这些指令,所以我们越容易读懂的代码,计算机的执行效率就越低.尽管科技">
+<meta property="og:updated_time" content="2015-08-10T12:58:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS位运算的巧妙运用">
+<meta name="twitter:description" content="位运算,对于底层的C,C++开发人员来说并不陌生,但是对于js这门弱语言来说,位运算总感觉是那么高深.那么我们为什么还要用位运算呢?
+首先,编程语言都是通过机器语言,汇编语言,C,C++,Java等这样一层一层封装出来的,每次封装对于开发人员来说代码的阅读性更好了,但是计算机在”阅读”这些代码的时候还是会一级一级的转换回去才能执行这些指令,所以我们越容易读懂的代码,计算机的执行效率就越低.尽管科技">
+  
+    <link rel="alternative" href="/atom.xml" title="Tenfour&#39;s Blogs" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.tenfour.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-js-bit-operation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/10/js-bit-operation/" class="article-date">
+  <time datetime="2015-08-10T11:11:56.000Z" itemprop="datePublished">2015-08-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>►<a class="article-category-link" href="/categories/javascript/代码优化/">代码优化</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS位运算的巧妙运用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>位运算,对于底层的<code>C</code>,<code>C++</code>开发人员来说并不陌生,但是对于<code>js</code>这门弱语言来说,位运算总感觉是那么高深.那么我们为什么还要用位运算呢?</p>
+<p>首先,编程语言都是通过机器语言,汇编语言,C,C++,Java等这样一层一层封装出来的,每次封装对于开发人员来说代码的阅读性更好了,但是计算机在”阅读”这些代码的时候还是会一级一级的转换回去才能执行这些指令,所以我们越容易读懂的代码,计算机的执行效率就越低.尽管科技越来越发达,硬件方面的技术很强,但是这些小小的优化并不是杯水车薪.<br>其次,可以装逼.在一些小菜鸟面前用这些他们看不懂的代码,很装逼,有木有.</p>
+<a id="more"></a>
+<p>具体的位运算涉及到二进制转换,原码,反码,补码等知识,就不一一罗列,而且在<code>js</code>中用处很小,只需要了解运用下面几点东西就OK了.</p>
+<h3 id="1-_奇偶性判断——按位与(&amp;)">1. 奇偶性判断——按位与(&amp;)</h3><p>按位与运算是把两个操作数转换成二进制再逐位比较,相同其结果为1,否则为0.而所有数字转化为二进制的奇偶性就只用看末尾,奇数尾数为1,偶数尾数为0.所以:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ( a &amp; <span class="number">1</span> ) &#123;</span><br><span class="line">  alert( <span class="string">'a是奇数!'</span> );</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;  </span><br><span class="line">  alert ( <span class="string">'a是偶数!'</span> )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-_两个整数的互换——按位异或(^)">2. 两个整数的互换——按位异或(^)</h3><p>加减互为逆运算,异或和异或互为逆运算.</p>
+<p>利用加减:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line">a = a + b;</span><br><span class="line">b = a - b;</span><br><span class="line">a = a - b;</span><br><span class="line"><span class="built_in">console</span>.log(a,b)</span><br></pre></td></tr></table></figure></p>
+<p>按位异或:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line">a = a ^ b;</span><br><span class="line">b = a ^ b;</span><br><span class="line">a = a ^ b;</span><br><span class="line"><span class="built_in">console</span>.log(a,b);</span><br></pre></td></tr></table></figure></p>
+<p>两个整数互换可以申明第三个中间变量进行临时存储实现,但是声明变量会占用内存,不友好.而加减又没有位运算效率高.</p>
+<h3 id="3-_-1的判断——按位取反(~)">3. -1的判断——按位取反(~)</h3><p>判断一个数是否为-1是我们经常遇到的,<code>indexOf()</code>在查找字符串的时候没有找到会返回-1,很多程序,插件,框架错误状态值默认返回-1,前后端分离<code>ajax</code>请求有误的时候返回-1(这个一般是一个项目中统一规定,当然也有返回0的,我们这里不做讨论).在位运算中,<strong><code>~-1===0</code></strong>的.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以前</span></span><br><span class="line"><span class="keyword">if</span> ( str.indexOf(<span class="string">'a'</span>) != -<span class="number">1</span> ) &#123;</span><br><span class="line">  alert(<span class="string">'a在字符串str中'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 现在</span></span><br><span class="line"><span class="keyword">if</span> ( ~str.indexOf(<span class="string">'a'</span>) ) &#123;</span><br><span class="line">  alert(<span class="string">'a在字符串str中'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以前</span></span><br><span class="line">$.get(url, data, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>( data.status != -<span class="number">1</span> ) &#123;</span><br><span class="line">    <span class="comment">// 数据正常处理</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 数据有误处理</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//现在</span></span><br><span class="line">$.get(url, data, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>( ~data.status ) &#123;</span><br><span class="line">    <span class="comment">// 数据正常处理</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 数据有误处理</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="4-_非负数取整——无符号右移(&gt;&gt;&gt;)">4. 非负数取整——无符号右移(&gt;&gt;&gt;)</h3><p>很多时候我们遇到正整数去掉(注意,不是四舍五入)小数点,一般会用到<code>Math.floor()</code>;<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以前</span></span><br><span class="line"><span class="built_in">Math</span>.floor(<span class="number">3.52</span>);  <span class="comment">// 结果 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 现在</span></span><br><span class="line"><span class="number">3.53</span> &gt;&gt;&gt; <span class="number">0</span>;  <span class="comment">// 结果 3</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="5-_取中间一位数——无符号右移(&gt;&gt;&gt;)">5. 取中间一位数——无符号右移(&gt;&gt;&gt;)</h3><p>很多时候我们会遇到取中间一位数,偶数就取中间偏左一位.如: 在一列翻页页码标签中,活跃的(active)始终在中间,要取得中间一位是第几位.(总共5个则第取3个,总共8个则取第4个).</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以前 </span></span><br><span class="line"><span class="keyword">if</span> ( totalPages是偶数 ) &#123;</span><br><span class="line">  alert( <span class="string">'中间一位是第'</span> + totalPage/<span class="number">2</span> +<span class="string">'位'</span> );</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  alert( <span class="string">'中间一位是第'</span> + (totalPage + <span class="number">1</span>)/<span class="number">2</span> +<span class="string">'位'</span> );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 现在</span></span><br><span class="line">alert( <span class="string">'中间一位是第'</span> + ( totalPage &gt;&gt;&gt; <span class="number">1</span> ) +<span class="string">'位'</span> );</span><br></pre></td></tr></table></figure>
+<p>总之,还有很多位运算方面技巧性的代码写法,有兴趣可以取研究研究.</p>
+<p><strong>PS:位运算只针对于非NaN的Number数据类型,对于非Number数据会被强制隐式转换成数字0再进行计算,同时位运算的优先级很低,注意需要加上括号增加优先级</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.tenfour.cn/2015/08/10/js-bit-operation/" data-id="cid5tpxav000kthze2tg8gapc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码优化/">代码优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/位运算/">位运算</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/08/08/html-hashtag/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">HTML你用hash(#!)值弥补ajax局部刷新加载的不足</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="cyEmoji" role="cylabs" data-use="emoji"></div>
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+  <script type="text/javascript">
+      window.changyan.api.config({
+          appid: 'cyrUKQk62',
+          conf: 'prod_4900ba09f2f5827fa6ef8fee3e0f0faf'
+      });
+  </script>
+</section>
+
+<script type="text/javascript" charset="utf-8" src="http://changyan.itc.cn/js/??lib/jquery.js,changyan.labs.js?appid=cyrUKQk62"></script>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">栏目分类:</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css-css3/">css/css3</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/css-css3/兼容性/">兼容性</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html-html5/">html/html5</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html-html5/url/">url</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/代码优化/">代码优化</a><span class="category-list-count">3</span></li></ul></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">历史归档:</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云:</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/hash/" style="font-size: 10px;">hash</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/rgba/" style="font-size: 10px;">rgba</a> <a href="/tags/事件委托/" style="font-size: 10px;">事件委托</a> <a href="/tags/代码优化/" style="font-size: 20px;">代码优化</a> <a href="/tags/位运算/" style="font-size: 10px;">位运算</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/条件选择/" style="font-size: 10px;">条件选择</a> <a href="/tags/运算符/" style="font-size: 10px;">运算符</a> <a href="/tags/透明度/" style="font-size: 10px;">透明度</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新博文:</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/08/10/js-bit-operation/">JS位运算的巧妙运用</a>
+          </li>
+        
+          <li>
+            <a href="/2015/08/08/html-hashtag/">HTML你用hash(#!)值弥补ajax局部刷新加载的不足</a>
+          </li>
+        
+          <li>
+            <a href="/2015/08/08/css-ie-rgba/">IE rgba兼容问题</a>
+          </li>
+        
+          <li>
+            <a href="/2015/08/08/js-event-delegate/">js事件委托</a>
+          </li>
+        
+          <li>
+            <a href="/2015/08/08/js-or-and-operator/">JS巧妙运用||和&amp;&amp;运算符优化条件选择代码</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Tenfour<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
