@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Tenfour's Blogs">
 <meta property="og:description" content="位运算,对于底层的C,C++开发人员来说并不陌生,但是对于js这门弱语言来说,位运算总感觉是那么高深.那么我们为什么还要用位运算呢?
 首先,编程语言都是通过机器语言,汇编语言,C,C++,Java等这样一层一层封装出来的,每次封装对于开发人员来说代码的阅读性更好了,但是计算机在”阅读”这些代码的时候还是会一级一级的转换回去才能执行这些指令,所以我们越容易读懂的代码,计算机的执行效率就越低.尽管科技">
-<meta property="og:updated_time" content="2015-08-10T12:58:15.000Z">
+<meta property="og:updated_time" content="2015-08-12T11:39:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS位运算的巧妙运用">
 <meta name="twitter:description" content="位运算,对于底层的C,C++开发人员来说并不陌生,但是对于js这门弱语言来说,位运算总感觉是那么高深.那么我们为什么还要用位运算呢?
@@ -89,6 +89,7 @@
 <p>具体的位运算涉及到二进制转换,原码,反码,补码等知识,就不一一罗列,而且在<code>js</code>中用处很小,只需要了解运用下面几点东西就OK了.</p>
 <h3 id="1-_奇偶性判断——按位与(&amp;)">1. 奇偶性判断——按位与(&amp;)</h3><p>按位与运算是把两个操作数转换成二进制再逐位比较,相同其结果为1,否则为0.而所有数字转化为二进制的奇偶性就只用看末尾,奇数尾数为1,偶数尾数为0.所以:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ( a &amp; <span class="number">1</span> ) &#123;</span><br><span class="line">  alert( <span class="string">'a是奇数!'</span> );</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;  </span><br><span class="line">  alert ( <span class="string">'a是偶数!'</span> )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a name="change-number" id="change-number"></a></p>
 <h3 id="2-_两个整数的互换——按位异或(^)">2. 两个整数的互换——按位异或(^)</h3><p>加减互为逆运算,异或和异或互为逆运算.</p>
 <p>利用加减:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line">a = a + b;</span><br><span class="line">b = a - b;</span><br><span class="line">a = a - b;</span><br><span class="line"><span class="built_in">console</span>.log(a,b)</span><br></pre></td></tr></table></figure></p>
 <p>按位异或:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line">a = a ^ b;</span><br><span class="line">b = a ^ b;</span><br><span class="line">a = a ^ b;</span><br><span class="line"><span class="built_in">console</span>.log(a,b);</span><br></pre></td></tr></table></figure></p>
@@ -104,7 +105,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.tenfour.cn/2015/08/10/js-bit-operation/" data-id="cid8d3z6h000lzj6fpt57ga7t" class="article-share-link">Share</a>
+      <a data-url="http://blog.tenfour.cn/2015/08/10/js-bit-operation/" data-id="cid8orgd2000rs8zek01a938t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码优化/">代码优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/位运算/">位运算</a></li></ul>
@@ -157,7 +158,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">栏目分类:</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css-css3/">css/css3</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/css-css3/兼容性/">兼容性</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html-html5/">html/html5</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html-html5/url/">url</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/代码优化/">代码优化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/数据类型/">数据类型</a><span class="category-list-count">1</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css-css3/">css/css3</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/css-css3/兼容性/">兼容性</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/html-html5/">html/html5</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/html-html5/url/">url</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/JS的艺术/">JS的艺术</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/代码优化/">代码优化</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/数据类型/">数据类型</a><span class="category-list-count">1</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -166,7 +167,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">历史归档:</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -175,7 +176,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云:</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/hash/" style="font-size: 10px;">hash</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/rgba/" style="font-size: 10px;">rgba</a> <a href="/tags/事件委托/" style="font-size: 10px;">事件委托</a> <a href="/tags/代码优化/" style="font-size: 15px;">代码优化</a> <a href="/tags/位运算/" style="font-size: 10px;">位运算</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/数据类型/" style="font-size: 10px;">数据类型</a> <a href="/tags/条件选择/" style="font-size: 10px;">条件选择</a> <a href="/tags/运算符/" style="font-size: 10px;">运算符</a> <a href="/tags/透明度/" style="font-size: 10px;">透明度</a>
+      <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/hash/" style="font-size: 10px;">hash</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/ie/" style="font-size: 10px;">ie</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/js的艺术/" style="font-size: 10px;">js的艺术</a> <a href="/tags/rgba/" style="font-size: 10px;">rgba</a> <a href="/tags/事件委托/" style="font-size: 10px;">事件委托</a> <a href="/tags/代码优化/" style="font-size: 15px;">代码优化</a> <a href="/tags/位运算/" style="font-size: 10px;">位运算</a> <a href="/tags/兼容性/" style="font-size: 10px;">兼容性</a> <a href="/tags/数据类型/" style="font-size: 10px;">数据类型</a> <a href="/tags/条件选择/" style="font-size: 10px;">条件选择</a> <a href="/tags/运算符/" style="font-size: 10px;">运算符</a> <a href="/tags/透明度/" style="font-size: 10px;">透明度</a> <a href="/tags/面试题/" style="font-size: 10px;">面试题</a>
     </div>
   </div>
 
@@ -185,6 +186,10 @@
     <h3 class="widget-title">最新博文:</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/08/12/js-art-topic/">JS一些艺术性答案的面试题</a>
+          </li>
         
           <li>
             <a href="/2015/08/12/js-data-type/">JS 如何获取一个数据的数据类型</a>
@@ -200,10 +205,6 @@
         
           <li>
             <a href="/2015/08/08/css-ie-rgba/">IE rgba兼容问题</a>
-          </li>
-        
-          <li>
-            <a href="/2015/08/08/js-event-delegate/">js事件委托</a>
           </li>
         
       </ul>
