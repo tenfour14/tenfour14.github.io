@@ -37,8 +37,6 @@
         
           <a class="main-nav-link" href="/">主页</a>
         
-          <a class="main-nav-link" href="/archives/">归档</a>
-        
           <a class="main-nav-link" href="/categories/前端综合/">前端综合</a>
         
           <a class="main-nav-link" href="/categories/javascript/">javascript</a>
@@ -64,36 +62,58 @@
       <div class="outer">
         <section id="main">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/08/08/js-or-and-operator/" class="archive-article-date">
-  <time datetime="2015-08-08T02:48:09.000Z" itemprop="datePublished">Aug 8</time>
+    <article id="post-js-or-and-operator" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/08/js-or-and-operator/" class="article-date">
+  <time datetime="2015-08-08T02:48:09.000Z" itemprop="datePublished">2015-08-08</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>►<a class="article-category-link" href="/categories/javascript/代码优化/">代码优化</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/08/js-or-and-operator/">JS巧妙运用||和&amp;&amp;运算符优化条件选择代码</a>
+      <a class="article-title" href="/2015/08/08/js-or-and-operator/">JS巧妙运用||和&amp;&amp;运算符优化条件选择代码</a>
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&amp;&amp; 和 || 和其他编程语言一样，在<code>js</code>中同样是一个双目逻辑运算符，执行逻辑运算与和或。往往计算机在执行这两个逻辑运算的时候会有一个”惰性”的思维:</p>
+<ol>
+<li>在执行 <code>exp1 &amp;&amp; exp2 &amp;&amp; ... &amp;&amp; expn</code>的时候,会从左到右依次判断表达式1,表达式2,…,表达式n,直到遇到第一个为<code>false</code>的时候,其表达式整体运算结果必定为<code>false</code>,那么后面的所有表达式都不会执行了;</li>
+<li>在执行 <code>exp1 || exp2 || ... || expn</code>会从左到右以此判断表达式1,表达式2,…,表达式n,直到遇到第一个为<code>true</code>的时候,其表达式整体运算结果必定为<code>true</code>,那么后面的所有表达式都不会执行了.</li>
+</ol>
+<p>那么,我们就可以利用这两点来简化代码中的<code>if...else</code>条件选择或者<code>?:</code>三目运算.来看下面的例子:<br>
+        
+          <p class="article-more-link">
+            <a href="/2015/08/08/js-or-and-operator/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.tenfour.cn/2015/08/08/js-or-and-operator/" data-id="cidicr6sz0001zy6f3l55s5n1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码优化/">代码优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/条件选择/">条件选择</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/运算符/">运算符</a></li></ul>
+
+    </footer>
   </div>
+  
 </article>
+
+
   
-  
-    </div></section>
   
 </section>
         
@@ -186,8 +206,6 @@
     <nav id="mobile-nav">
   
     <a href="/" class="mobile-nav-link">主页</a>
-  
-    <a href="/archives/" class="mobile-nav-link">归档</a>
   
     <a href="/categories/前端综合/" class="mobile-nav-link">前端综合</a>
   

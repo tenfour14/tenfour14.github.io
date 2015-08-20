@@ -37,8 +37,6 @@
         
           <a class="main-nav-link" href="/">主页</a>
         
-          <a class="main-nav-link" href="/archives/">归档</a>
-        
           <a class="main-nav-link" href="/categories/前端综合/">前端综合</a>
         
           <a class="main-nav-link" href="/categories/javascript/">javascript</a>
@@ -64,74 +62,158 @@
       <div class="outer">
         <section id="main">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/08/10/js-bit-operation/" class="archive-article-date">
-  <time datetime="2015-08-10T11:11:56.000Z" itemprop="datePublished">Aug 10</time>
+    <article id="post-js-bit-operation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/10/js-bit-operation/" class="article-date">
+  <time datetime="2015-08-10T11:11:56.000Z" itemprop="datePublished">2015-08-10</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>►<a class="article-category-link" href="/categories/javascript/代码优化/">代码优化</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/10/js-bit-operation/">JS位运算的巧妙运用</a>
+      <a class="article-title" href="/2015/08/10/js-bit-operation/">JS位运算的巧妙运用</a>
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/08/08/js-event-delegate/" class="archive-article-date">
-  <time datetime="2015-08-08T03:28:36.000Z" itemprop="datePublished">Aug 8</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
+        <p>位运算,对于底层的<code>C</code>,<code>C++</code>开发人员来说并不陌生,但是对于<code>js</code>这门弱语言来说,位运算总感觉是那么高深.那么我们为什么还要用位运算呢?</p>
+<p>首先,编程语言都是通过机器语言,汇编语言,C,C++,Java等这样一层一层封装出来的,每次封装对于开发人员来说代码的阅读性更好了,但是计算机在”阅读”这些代码的时候还是会一级一级的转换回去才能执行这些指令,所以我们越容易读懂的代码,计算机的执行效率就越低.尽管科技越来越发达,硬件方面的技术很强,但是这些小小的优化并不是杯水车薪.<br>其次,可以装逼.在一些小菜鸟面前用这些他们看不懂的代码,很装逼,有木有.</p>
+        
+          <p class="article-more-link">
+            <a href="/2015/08/10/js-bit-operation/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.tenfour.cn/2015/08/10/js-bit-operation/" data-id="cidicr6u7000szy6f6quz3r7e" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码优化/">代码优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/位运算/">位运算</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js-event-delegate" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/08/js-event-delegate/" class="article-date">
+  <time datetime="2015-08-08T03:28:36.000Z" itemprop="datePublished">2015-08-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>►<a class="article-category-link" href="/categories/javascript/代码优化/">代码优化</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/08/js-event-delegate/">js事件委托</a>
+      <a class="article-title" href="/2015/08/08/js-event-delegate/">js事件委托</a>
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/08/08/js-or-and-operator/" class="archive-article-date">
-  <time datetime="2015-08-08T02:48:09.000Z" itemprop="datePublished">Aug 8</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
+        <h2 id="什么是事件委托">什么是事件委托</h2><p>事件就是指<code>js</code>中的<code>onclick</code>,<code>onmouseout</code>,<code>onmousemove</code>,等事件,委托就是自己的事件,让别人去做.也就是说利用<code>js</code>的事件冒泡的原理,父级委托自己的子元素来完成事件,那有什么好处呢?</p>
+<ol>
+<li>避免循环,提高性能;</li>
+<li>可以让后来通过<code>js</code>生成同类元素也能具有事先添加的事件功能.</li>
+</ol>
+<p>体我们可以来看下面的例子:<br>
+        
+          <p class="article-more-link">
+            <a href="/2015/08/08/js-event-delegate/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.tenfour.cn/2015/08/08/js-event-delegate/" data-id="cidicr6tg000ezy6fb9pc8qt2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/事件委托/">事件委托</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码优化/">代码优化</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js-or-and-operator" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/08/js-or-and-operator/" class="article-date">
+  <time datetime="2015-08-08T02:48:09.000Z" itemprop="datePublished">2015-08-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>►<a class="article-category-link" href="/categories/javascript/代码优化/">代码优化</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/08/js-or-and-operator/">JS巧妙运用||和&amp;&amp;运算符优化条件选择代码</a>
+      <a class="article-title" href="/2015/08/08/js-or-and-operator/">JS巧妙运用||和&amp;&amp;运算符优化条件选择代码</a>
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&amp;&amp; 和 || 和其他编程语言一样，在<code>js</code>中同样是一个双目逻辑运算符，执行逻辑运算与和或。往往计算机在执行这两个逻辑运算的时候会有一个”惰性”的思维:</p>
+<ol>
+<li>在执行 <code>exp1 &amp;&amp; exp2 &amp;&amp; ... &amp;&amp; expn</code>的时候,会从左到右依次判断表达式1,表达式2,…,表达式n,直到遇到第一个为<code>false</code>的时候,其表达式整体运算结果必定为<code>false</code>,那么后面的所有表达式都不会执行了;</li>
+<li>在执行 <code>exp1 || exp2 || ... || expn</code>会从左到右以此判断表达式1,表达式2,…,表达式n,直到遇到第一个为<code>true</code>的时候,其表达式整体运算结果必定为<code>true</code>,那么后面的所有表达式都不会执行了.</li>
+</ol>
+<p>那么,我们就可以利用这两点来简化代码中的<code>if...else</code>条件选择或者<code>?:</code>三目运算.来看下面的例子:<br>
+        
+          <p class="article-more-link">
+            <a href="/2015/08/08/js-or-and-operator/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.tenfour.cn/2015/08/08/js-or-and-operator/" data-id="cidicr6sz0001zy6f3l55s5n1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码优化/">代码优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/条件选择/">条件选择</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/运算符/">运算符</a></li></ul>
+
+    </footer>
   </div>
+  
 </article>
+
+
   
-  
-    </div></section>
   
 </section>
         
@@ -224,8 +306,6 @@
     <nav id="mobile-nav">
   
     <a href="/" class="mobile-nav-link">主页</a>
-  
-    <a href="/archives/" class="mobile-nav-link">归档</a>
   
     <a href="/categories/前端综合/" class="mobile-nav-link">前端综合</a>
   

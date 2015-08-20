@@ -37,8 +37,6 @@
         
           <a class="main-nav-link" href="/">主页</a>
         
-          <a class="main-nav-link" href="/archives/">归档</a>
-        
           <a class="main-nav-link" href="/categories/前端综合/">前端综合</a>
         
           <a class="main-nav-link" href="/categories/javascript/">javascript</a>
@@ -64,36 +62,55 @@
       <div class="outer">
         <section id="main">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/08/08/css-ie-rgba/" class="archive-article-date">
-  <time datetime="2015-08-08T04:06:17.000Z" itemprop="datePublished">Aug 8</time>
+    <article id="post-css-ie-rgba" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/08/css-ie-rgba/" class="article-date">
+  <time datetime="2015-08-08T04:06:17.000Z" itemprop="datePublished">2015-08-08</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/css-css3/">css/css3</a>►<a class="article-category-link" href="/categories/css-css3/兼容性/">兼容性</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/08/08/css-ie-rgba/">IE rgba兼容问题</a>
+      <a class="article-title" href="/2015/08/08/css-ie-rgba/">IE rgba兼容问题</a>
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>CSS</code>透明度设置有<code>opacity</code>,<code>IE</code>有滤镜<code>filter:alpha()</code>,那<code>rgba</code>也是设置透明度的,有什么用呢?</p>
+<p><code>opacity</code>,<code>IE</code>的<code>filter:alpha()</code>透明度设置会让子元素继承其透明度,但是在实际项目中中,往往更多的是不想要其透明度被继承.当然,这个可以通过用定位而不直接写在透明元素里面解决透明度继承问题,但是定位始终不是一个好的布局方式.</p>
+<p><strong>非<code>IE</code>浏览器</strong>可以设计背景色用<code>rgba(R,G,B,A)</code>,其中R,G,B分别是0-255数字或者用百分比表示，A是0-1的数字，0表示全透明，1表示正常显示.但是人神共愤的<code>IE</code>并不支持这玩意.不过<code>IE</code>也有它可爱的一面——滤镜.</p>
+        
+          <p class="article-more-link">
+            <a href="/2015/08/08/css-ie-rgba/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.tenfour.cn/2015/08/08/css-ie-rgba/" data-id="cidicr6uj001ozy6fyvzqpk7e" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ie/">ie</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rgba/">rgba</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容性/">兼容性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/透明度/">透明度</a></li></ul>
+
+    </footer>
   </div>
+  
 </article>
+
+
   
-  
-    </div></section>
   
 </section>
         
@@ -186,8 +203,6 @@
     <nav id="mobile-nav">
   
     <a href="/" class="mobile-nav-link">主页</a>
-  
-    <a href="/archives/" class="mobile-nav-link">归档</a>
   
     <a href="/categories/前端综合/" class="mobile-nav-link">前端综合</a>
   
