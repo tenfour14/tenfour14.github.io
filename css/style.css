@@ -456,6 +456,9 @@ body {
   -moz-transition: 0.2s ease-out;
   -ms-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  overflow: hidden;
 }
 #search-form-wrap.on {
   opacity: 1;
@@ -1402,4 +1405,9 @@ pre .javascript .function {
 }
 .widget_links a {
   margin-right: 5px;
+}
+.tenfour_info .t_info_title {
+  display: inline-block;
+  width: 70px;
+  text-align: right;
 }
