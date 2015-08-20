@@ -1101,6 +1101,26 @@ a.article-title:hover {
 #footer a:hover {
   text-decoration: underline;
 }
+#footer .power_text {
+  float: left;
+  height: 80px;
+  line-height: 80px;
+}
+#footer .power_list {
+  float: left;
+}
+#footer .power_list li {
+  display: inline-block;
+  text-align: center;
+  height: 80px;
+  width: 100px;
+}
+#footer .power_list li a {
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+  margin-top: 10px;
+}
 .article-entry pre,
 .article-entry .highlight {
   background: #2d2d2d;
