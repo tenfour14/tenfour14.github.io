@@ -720,7 +720,13 @@ a.article-title:hover {
   margin-right: 10px;
 }
 .article-tag-list-link:before {
-  content: "#";
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("images/tag.png") center center no-repeat;
+  vertical-align: bottom;
+  margin-right: 2px;
 }
 .article-comment-link {
   float: right;
@@ -1095,10 +1101,6 @@ a.article-title:hover {
 #footer a:hover {
   text-decoration: underline;
 }
-#footer-info {
-  line-height: 1.6em;
-  font-size: 0.85em;
-}
 .article-entry pre,
 .article-entry .highlight {
   background: #2d2d2d;
@@ -1377,4 +1379,7 @@ pre .javascript .function {
 .tagcloud a {
   margin-right: 5px;
   display: inline-block;
+}
+.widget_links a {
+  margin-right: 5px;
 }
