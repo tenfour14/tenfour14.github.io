@@ -3,25 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>JS巧妙运用||和&amp;&amp;运算符优化条件选择代码 | Tenfour&#39;s Blogs</title>
+  <title>test | Tenfour&#39;s Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="javascripts,js,逻辑运算符,代码优化,条件选择">
-  <meta name="description" content="&amp;amp;&amp;amp; 和 || 和其他编程语言一样，在js中同样是一个双目逻辑运算符，执行逻辑运算与和或。往往计算机在执行这两个逻辑运算的时候会有一个”惰性”的思维:
-
-在执行 exp1 &amp;amp;&amp;amp; exp2 &amp;amp;&amp;amp; ... &amp;amp;&amp;amp; expn的时候,会从左到右依次判断表达式1,表达式2,…,表达式n,直到遇到第一个为false的时候,其表达式整体运算结果必定为">
+  <meta name="keywords" content="tenfour,blog,web,前端,js,javascript,css,css3,html,html5">
+  <meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS巧妙运用||和&&运算符优化条件选择代码">
-<meta property="og:url" content="http://blog.tenfour.cn/2015/08/08/js-or-and-operator/index.html">
+<meta property="og:title" content="test">
+<meta property="og:url" content="http://blog.tenfour.cn/2015/08/22/test/index.html">
 <meta property="og:site_name" content="Tenfour's Blogs">
-<meta property="og:description" content="&amp;amp;&amp;amp; 和 || 和其他编程语言一样，在js中同样是一个双目逻辑运算符，执行逻辑运算与和或。往往计算机在执行这两个逻辑运算的时候会有一个”惰性”的思维:
-
-在执行 exp1 &amp;amp;&amp;amp; exp2 &amp;amp;&amp;amp; ... &amp;amp;&amp;amp; expn的时候,会从左到右依次判断表达式1,表达式2,…,表达式n,直到遇到第一个为false的时候,其表达式整体运算结果必定为">
-<meta property="og:updated_time" content="2015-08-08T06:59:13.000Z">
+<meta property="og:description">
+<meta property="og:updated_time" content="2015-08-21T16:39:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS巧妙运用||和&&运算符优化条件选择代码">
-<meta name="twitter:description" content="&amp;amp;&amp;amp; 和 || 和其他编程语言一样，在js中同样是一个双目逻辑运算符，执行逻辑运算与和或。往往计算机在执行这两个逻辑运算的时候会有一个”惰性”的思维:
-
-在执行 exp1 &amp;amp;&amp;amp; exp2 &amp;amp;&amp;amp; ... &amp;amp;&amp;amp; expn的时候,会从左到右依次判断表达式1,表达式2,…,表达式n,直到遇到第一个为false的时候,其表达式整体运算结果必定为">
+<meta name="twitter:title" content="test">
+<meta name="twitter:description">
   
     <link rel="alternative" href="/atom.xml" title="Tenfour&#39;s Blogs" type="application/atom+xml">
   
@@ -67,16 +61,12 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-js-or-and-operator" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/08/08/js-or-and-operator/" class="article-date">
-  <time datetime="2015-08-08T02:48:09.000Z" itemprop="datePublished">2015-08-08</time>
+    <a href="/2015/08/22/test/" class="article-date">
+  <time datetime="2015-08-21T16:39:33.000Z" itemprop="datePublished">2015-08-22</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>►<a class="article-category-link" href="/categories/javascript/代码优化/">代码优化</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -85,7 +75,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JS巧妙运用||和&amp;&amp;运算符优化条件选择代码
+      test
     </h1>
   
 
@@ -93,39 +83,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&amp;&amp; 和 || 和其他编程语言一样，在<code>js</code>中同样是一个双目逻辑运算符，执行逻辑运算与和或。往往计算机在执行这两个逻辑运算的时候会有一个”惰性”的思维:</p>
-<ol>
-<li>在执行 <code>exp1 &amp;&amp; exp2 &amp;&amp; ... &amp;&amp; expn</code>的时候,会从左到右依次判断表达式1,表达式2,…,表达式n,直到遇到第一个为<code>false</code>的时候,其表达式整体运算结果必定为<code>false</code>,那么后面的所有表达式都不会执行了;</li>
-<li>在执行 <code>exp1 || exp2 || ... || expn</code>会从左到右以此判断表达式1,表达式2,…,表达式n,直到遇到第一个为<code>true</code>的时候,其表达式整体运算结果必定为<code>true</code>,那么后面的所有表达式都不会执行了.</li>
-</ol>
-<p>那么,我们就可以利用这两点来简化代码中的<code>if...else</code>条件选择或者<code>?:</code>三目运算.来看下面的例子:<br><a id="more"></a></p>
-<p>经常会遇到当条件成立时候执行某个函数或者当条件不成立的时候执行某个函数,以前我们会写成这样:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果表表达式exp结果为true执行函数fun</span></span><br><span class="line"><span class="keyword">if</span>( exp ) &#123;</span><br><span class="line">  fun();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果表达式exp结果为false执行函数fun</span></span><br><span class="line"><span class="keyword">if</span>( !exp ) &#123;</span><br><span class="line">  fun();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>那么现在我们可以写成:<br><figure class="highlight ocaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/** 如果表达式exp结果为<span class="literal">true</span>执行函数<span class="keyword">fun</span></span><br><span class="line">* 根据上面第一条,如果exp表达式结果为<span class="literal">false</span>,那么结果必定为<span class="literal">false</span>,所以就不会执行<span class="keyword">fun</span></span><br><span class="line">* 反之,exp为<span class="literal">true</span>的时候,不能判断整体结果为<span class="literal">true</span>还是<span class="literal">false</span>,所以计算机会继续执行<span class="keyword">fun</span></span><br><span class="line">*/</span><br><span class="line">exp &amp;&amp; <span class="keyword">fun</span><span class="literal">()</span>;</span><br><span class="line"></span><br><span class="line">/** 如果表达式exp结果为<span class="literal">false</span>执行函数<span class="keyword">fun</span></span><br><span class="line">* 根据上面第二条,如果exp表达式结果为<span class="literal">true</span>,那么结果必定为<span class="literal">true</span>,所以就不会执行<span class="keyword">fun</span></span><br><span class="line">* 反之,exp为<span class="literal">false</span>的时候,不能判断整体结果为ture还是<span class="literal">false</span>,所以计算机会继续执行<span class="keyword">fun</span></span><br><span class="line">*/</span><br><span class="line">exp || <span class="keyword">fun</span><span class="literal">()</span>;</span><br></pre></td></tr></table></figure></p>
-
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.tenfour.cn/2015/08/08/js-or-and-operator/" data-id="cidlv48su0001j3ze26e080ez" class="article-share-link">Share</a>
+      <a data-url="http://blog.tenfour.cn/2015/08/22/test/" data-id="cidlv48s20000j3zel7uyvgbb" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码优化/">代码优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/条件选择/">条件选择</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/运算符/">运算符</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2015/08/08/js-event-delegate/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          js事件委托
-        
-      </div>
-    </a>
   
+    <a href="/2015/08/21/essay-write-blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">程序员坚持写博客的好处</div>
+    </a>
   
 </nav>
 

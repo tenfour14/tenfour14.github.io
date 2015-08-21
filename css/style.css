@@ -1097,6 +1097,10 @@ a.article-title:hover {
   border-top: 1px solid #ddd;
   color: #999;
 }
+#footer .powerby-box {
+  overflow: hidden;
+  padding: 5px 40px;
+}
 #footer a {
   color: #258fb8;
   text-decoration: none;
