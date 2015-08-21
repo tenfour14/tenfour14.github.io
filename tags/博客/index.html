@@ -3,25 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>IE rgba兼容问题 | Tenfour&#39;s Blogs</title>
+  <title>Tag: 博客 | Tenfour&#39;s Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="css,ie,兼容性,rgba,透明度">
-  <meta name="description" content="CSS透明度设置有opacity,IE有滤镜filter:alpha(),那rgba也是设置透明度的,有什么用呢?
-opacity,IE的filter:alpha()透明度设置会让子元素继承其透明度,但是在实际项目中中,往往更多的是不想要其透明度被继承.当然,这个可以通过用定位而不直接写在透明元素里面解决透明度继承问题,但是定位始终不是一个好的布局方式.
-非IE浏览器可以设计背景色用rgba(R,">
-<meta property="og:type" content="article">
-<meta property="og:title" content="IE rgba兼容问题">
-<meta property="og:url" content="http://blog.tenfour.cn/2015/08/08/css-ie-rgba/index.html">
+  <meta name="keywords" content="tenfour,blog,web,前端,js,javascript,css,css3,html,html5">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tenfour's Blogs">
+<meta property="og:url" content="http://blog.tenfour.cn/tags/博客/index.html">
 <meta property="og:site_name" content="Tenfour's Blogs">
-<meta property="og:description" content="CSS透明度设置有opacity,IE有滤镜filter:alpha(),那rgba也是设置透明度的,有什么用呢?
-opacity,IE的filter:alpha()透明度设置会让子元素继承其透明度,但是在实际项目中中,往往更多的是不想要其透明度被继承.当然,这个可以通过用定位而不直接写在透明元素里面解决透明度继承问题,但是定位始终不是一个好的布局方式.
-非IE浏览器可以设计背景色用rgba(R,">
-<meta property="og:updated_time" content="2015-08-08T06:58:53.000Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IE rgba兼容问题">
-<meta name="twitter:description" content="CSS透明度设置有opacity,IE有滤镜filter:alpha(),那rgba也是设置透明度的,有什么用呢?
-opacity,IE的filter:alpha()透明度设置会让子元素继承其透明度,但是在实际项目中中,往往更多的是不想要其透明度被继承.当然,这个可以通过用定位而不直接写在透明元素里面解决透明度继承问题,但是定位始终不是一个好的布局方式.
-非IE浏览器可以设计背景色用rgba(R,">
+<meta name="twitter:title" content="Tenfour's Blogs">
+<meta name="twitter:description">
   
     <link rel="alternative" href="/atom.xml" title="Tenfour&#39;s Blogs" type="application/atom+xml">
   
@@ -67,14 +60,16 @@ opacity,IE的filter:alpha()透明度设置会让子元素继承其透明度,但�
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-css-ie-rgba" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-essay-write-blog" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/08/08/css-ie-rgba/" class="article-date">
-  <time datetime="2015-08-08T04:06:17.000Z" itemprop="datePublished">2015-08-08</time>
+    <a href="/2015/08/21/essay-write-blog/" class="article-date">
+  <time datetime="2015-08-21T02:24:09.000Z" itemprop="datePublished">2015-08-21</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/css-css3/">css/css3</a>►<a class="article-category-link" href="/categories/css-css3/兼容性/">兼容性</a>
+    <a class="article-category-link" href="/categories/生活随笔/">生活随笔</a>
   </div>
 
   </div>
@@ -84,8 +79,8 @@ opacity,IE的filter:alpha()透明度设置会让子元素继承其透明度,但�
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      IE rgba兼容问题
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/21/essay-write-blog/">程序员坚持写博客的好处</a>
     </h1>
   
 
@@ -93,60 +88,30 @@ opacity,IE的filter:alpha()透明度设置会让子元素继承其透明度,但�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><code>CSS</code>透明度设置有<code>opacity</code>,<code>IE</code>有滤镜<code>filter:alpha()</code>,那<code>rgba</code>也是设置透明度的,有什么用呢?</p>
-<p><code>opacity</code>,<code>IE</code>的<code>filter:alpha()</code>透明度设置会让子元素继承其透明度,但是在实际项目中中,往往更多的是不想要其透明度被继承.当然,这个可以通过用定位而不直接写在透明元素里面解决透明度继承问题,但是定位始终不是一个好的布局方式.</p>
-<p><strong>非<code>IE</code>浏览器</strong>可以设计背景色用<code>rgba(R,G,B,A)</code>,其中R,G,B分别是0-255数字或者用百分比表示，A是0-1的数字，0表示全透明，1表示正常显示.但是人神共愤的<code>IE</code>并不支持这玩意.不过<code>IE</code>也有它可爱的一面——滤镜.</p>
-<a id="more"></a>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="rule"><span class="attribute">filter</span>:<span class="value">progid:DXImageTransform.Microsoft.<span class="function">gradient</span>(startcolorstr=<span class="hexcolor">#AA</span>RRGGBB,endcolorstr=<span class="hexcolor">#AA</span>RRGGBB)</span></span></span><br></pre></td></tr></table></figure>
-<p>这本身是一个<code>IE</code>渐变的滤镜.不过我们把渐变的<code>startcolorstr</code>和<code>endcolorstr</code>设置为一样的,那就不存在渐变的效果了.其中<code>RRGGBB</code>是(0-255)十六进制的RGB值,但是透明度<code>AA</code>也是(0-255)十六进制,所以需要转换以下,比如0.5的透明度需要转换为255*0.5取整再转换为十六进制.</p>
-
+        <p>作为一个程序员,你或许会经常去逛一些技术性网站,博客,但是你有一个自己的博客么,你会经常去写,更新你的博客么?</p>
+<p>之前,我也一直认为写博客就只是练练打字速度而已,其实并没有什么卵用.然而,事实并不是这样.坚持写博客会有很多你意想不到的好处: 比如大家最关心的找工作,在面试的时候,如果有一个自己精心维护的博客,会是一个很好的加分项.</p>
+<p>当然,好处并不至于此.下面我们就来一起欣赏坚持写博客的好处吧:</p>
+        
+          <p class="article-more-link">
+            <a href="/2015/08/21/essay-write-blog/#more">阅读全文</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.tenfour.cn/2015/08/08/css-ie-rgba/" data-id="cidl0k3ff001p8t6fbdilwihn" class="article-share-link">Share</a>
+      <a data-url="http://blog.tenfour.cn/2015/08/21/essay-write-blog/" data-id="cidl0k3fe001o8t6fa2x92fgt" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ie/">ie</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rgba/">rgba</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容性/">兼容性</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/透明度/">透明度</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客/">博客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活随笔/">生活随笔</a></li></ul>
 
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2015/08/08/html-hashtag/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          HTML你用hash(#!)值弥补ajax局部刷新加载的不足
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2015/08/08/js-event-delegate/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">js事件委托</div>
-    </a>
-  
-</nav>
-
-  
 </article>
 
 
-<section id="comments">
-  <div id="cyEmoji" role="cylabs" data-use="emoji"></div>
-  <div id="SOHUCS"></div>
-  <script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
-  <script type="text/javascript">
-      window.changyan.api.config({
-          appid: 'cyrUKQk62',
-          conf: 'prod_4900ba09f2f5827fa6ef8fee3e0f0faf'
-      });
-  </script>
-</section>
-<script type="text/javascript" charset="utf-8" src="http://changyan.itc.cn/js/??lib/jquery.js,changyan.labs.js?appid=cyrUKQk62"></script>
+  
+  
 </section>
         
           <aside id="sidebar">
