@@ -629,9 +629,13 @@ a.article-title:hover {
 }
 .article-entry blockquote {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.4em;
-  margin: 1.6em 20px;
-  text-align: center;
+  font-size: 1.1em;
+  margin: 1.6em 0;
+  padding: 1px 0;
+  text-indent: 10px;
+  text-align: left;
+  border-left: 8px solid #999;
+  background-color: #eee;
 }
 .article-entry blockquote footer {
   font-size: 14px;
@@ -1414,4 +1418,48 @@ pre .javascript .function {
   display: inline-block;
   width: 70px;
   text-align: right;
+}
+.w_calendar .calendar_top {
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #eee;
+  padding: 0 50px;
+  font-size: 12px;
+}
+.w_calendar .calendar_top span {
+  position: absolute;
+  top: 5px;
+  line-height: 20px;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+.w_calendar .calendar_top span:hover {
+  cursor: pointer;
+}
+.w_calendar .calendar_top .up_year {
+  left: 10px;
+}
+.w_calendar .calendar_top .up_month {
+  left: 30px;
+}
+.w_calendar .calendar_top .down_month {
+  right: 30px;
+}
+.w_calendar .calendar_top .down_year {
+  right: 10px;
+}
+.w_calendar table {
+  background: #fff;
+  width: 100%;
+  border-collapse: collapse;
+}
+.w_calendar table td,
+.w_calendar table th {
+  text-align: center;
+  width: 14.2857%;
+  height: 30px;
+  border: 1px solid #eee;
 }
