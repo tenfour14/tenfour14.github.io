@@ -3,18 +3,28 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: 位运算 | Tenfour&#39;s Blogs</title>
+  <title>前端课件2-基础篇 | Tenfour&#39;s Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="tenfour,blog,web,前端,js,javascript,css,css3,html,html5">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tenfour's Blogs">
-<meta property="og:url" content="http://blog.tenfour.cn/tags/位运算/index.html">
+  <meta name="keywords" content="前端课件,基础,HTML,CSS,JS">
+  <meta name="description" content="table-&amp;gt;div+css布局
+HTML布局标签div-&amp;gt;header,footer,article,section,nav等class命名规则: topbar nav header search(box) content footer 等
+CSS布局相关属性文档流,reset
+1. display2. float3. 盒模型属性: width,height,border,margi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端课件2-基础篇">
+<meta property="og:url" content="http://blog.tenfour.cn/2015/11/18/web-cour-base/index.html">
 <meta property="og:site_name" content="Tenfour's Blogs">
-<meta property="og:description">
+<meta property="og:description" content="table-&amp;gt;div+css布局
+HTML布局标签div-&amp;gt;header,footer,article,section,nav等class命名规则: topbar nav header search(box) content footer 等
+CSS布局相关属性文档流,reset
+1. display2. float3. 盒模型属性: width,height,border,margi">
+<meta property="og:updated_time" content="2015-11-18T05:14:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tenfour's Blogs">
-<meta name="twitter:description">
+<meta name="twitter:title" content="前端课件2-基础篇">
+<meta name="twitter:description" content="table-&amp;gt;div+css布局
+HTML布局标签div-&amp;gt;header,footer,article,section,nav等class命名规则: topbar nav header search(box) content footer 等
+CSS布局相关属性文档流,reset
+1. display2. float3. 盒模型属性: width,height,border,margi">
   
     <link rel="alternative" href="/atom.xml" title="Tenfour&#39;s Blogs" type="application/atom+xml">
   
@@ -60,16 +70,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-js-bit-operation" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-web-cour-base" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/08/10/js-bit-operation/" class="article-date">
-  <time datetime="2015-08-10T11:11:56.000Z" itemprop="datePublished">2015-08-10</time>
+    <a href="/2015/11/18/web-cour-base/" class="article-date">
+  <time datetime="2015-11-18T04:45:56.000Z" itemprop="datePublished">2015-11-18</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>►<a class="article-category-link" href="/categories/javascript/代码优化/">代码优化</a>
+    <a class="article-category-link" href="/categories/前端课件/">前端课件</a>►<a class="article-category-link" href="/categories/前端课件/基础篇/">基础篇</a>
   </div>
 
   </div>
@@ -79,8 +87,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/10/js-bit-operation/">JS位运算的巧妙运用</a>
+    <h1 class="article-title" itemprop="name">
+      前端课件2-基础篇
     </h1>
   
 
@@ -88,29 +96,50 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>位运算,对于底层的<code>C</code>,<code>C++</code>开发人员来说并不陌生,但是对于<code>js</code>这门弱语言来说,位运算总感觉是那么高深.那么我们为什么还要用位运算呢?</p>
-<p>首先,编程语言都是通过机器语言,汇编语言,C,C++,Java等这样一层一层封装出来的,每次封装对于开发人员来说代码的阅读性更好了,但是计算机在”阅读”这些代码的时候还是会一级一级的转换回去才能执行这些指令,所以我们越容易读懂的代码,计算机的执行效率就越低.尽管科技越来越发达,硬件方面的技术很强,但是这些小小的优化并不是杯水车薪.<br>其次,可以装逼.在一些小菜鸟面前用这些他们看不懂的代码,很装逼,有木有.</p>
-        
-          <p class="article-more-link">
-            <a href="/2015/08/10/js-bit-operation/#more">阅读全文</a>
-          </p>
-        
+        <p>table-&gt;div+css布局</p>
+<h2 id="HTML布局标签">HTML布局标签</h2><p>div-&gt;header,footer,article,section,nav等<br>class命名规则: topbar nav header search(box) content footer 等</p>
+<h2 id="CSS布局相关属性">CSS布局相关属性</h2><p><strong>文档流</strong>,<strong>reset</strong></p>
+<h3 id="1-_display">1. display</h3><h3 id="2-_float">2. float</h3><h3 id="3-_盒模型属性:_width,height,border,margin,padding">3. 盒模型属性: width,height,border,margin,padding</h3><h3 id="4-_position+left/right/top/bottom">4. position+left/right/top/bottom</h3><p>非static才能使用偏移量.</p>
+<h3 id="5-_z-index">5. z-index</h3><h3 id="6-visibility">6.visibility</h3><h2 id="特殊情况">特殊情况</h2><p>边距合并,高度塌陷等</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.tenfour.cn/2015/08/10/js-bit-operation/" data-id="cih4bt9ie0016py6flel72x6l" class="article-share-link">Share</a>
+      <a data-url="http://blog.tenfour.cn/2015/11/18/web-cour-base/" data-id="cih4bt9hw0007py6fcuj5g5jb" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码优化/">代码优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/位运算/">位运算</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端课件/">前端课件</a></li></ul>
 
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/11/11/web-cour-intro/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">前端课件1-入门篇</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-  
-  
+<section id="comments">
+  <div id="cyEmoji" role="cylabs" data-use="emoji"></div>
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+  <script type="text/javascript">
+      window.changyan.api.config({
+          appid: 'cyrUKQk62',
+          conf: 'prod_4900ba09f2f5827fa6ef8fee3e0f0faf'
+      });
+  </script>
+</section>
+<script type="text/javascript" charset="utf-8" src="http://changyan.itc.cn/js/??lib/jquery.js,changyan.labs.js?appid=cyrUKQk62"></script>
 </section>
         
           <aside id="sidebar">
